@@ -59,7 +59,7 @@ Fazzy Fazzy::mult(const Fazzy& A)
 
 Fazzy Fazzy::div(const Fazzy& A)
 {
-    if (((A.l > 0) && (A.r > 0)) || ((A.l < 0) && (A.r < 0))) {
+    if (A.l * A.r > 0) {
         Fazzy res;
         double max, min, tmp[4];
         tmp[0] = this->l / A.l;
@@ -81,7 +81,7 @@ Fazzy Fazzy::div(const Fazzy& A)
 
 Fazzy Fazzy::rev()
 {
-    if ((this->l != 0) & (this->r != 0))
+    if (this->l * this->r > 0)
         {
             Fazzy res;
             res.l = 1/this->r;
